@@ -5,7 +5,7 @@ LogIn
 {% endblock %}
 
 {% block body %}
-<form action="/dashboard">
+<form action="/dashboard" method="POST">
     <input type="email" name="email" placeholder="Email">
     <input type="password" name="password" placeholder="Password">
     <input type="submit" value="login">
