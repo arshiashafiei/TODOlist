@@ -5,5 +5,9 @@ Tasks
 {% endblock %}
 
 {% block body %}
-hi
+hi {{ session.email }}
+<nav class="ml-10">
+    <a href="/">Home Page</a>
+    <a class="ml-10" href="/logout">log out</a>
+</nav>
 {% endblock %}

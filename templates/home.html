@@ -1,12 +1,20 @@
 {% extends "layout.html" %}
 {% block title %}
-Home Page
+Home
 {% endblock %}
 
 {% block body %}
 <h1>Home Page</h1>
-<nav class="ml-10">
-    <a href="/signup">signup</a>
-    <a class="ml-10" href="/login">login</a>
-</nav>
+    {% if session.email %}
+        you are logged in already as {{ session.name }} 
+        <nav class="ml-10">
+            <a href="/dashboard">dashboard</a>
+            <a class="ml-10" href="/logout">log out</a>
+        </nav>
+    {% else %}
+        <nav class="ml-10">
+            <a href="/signup">signup</a>
+            <a class="ml-10" href="/login">login</a>
+        </nav>
+    {% endif %}
 {% endblock %}

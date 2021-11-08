@@ -5,9 +5,12 @@ LogIn
 {% endblock %}
 
 {% block body %}
-<form action="/dashboard" method="POST">
-    <input type="email" name="email" placeholder="Email">
-    <input type="password" name="password" placeholder="Password">
-    <input type="submit" value="login">
-</form>
+    {% if name %}
+        you are succesfuly registered {{ name }} now log in
+    {% endif %}
+    <form action="/login" method="post">
+        <input type="email" name="email" placeholder="Email" autofocus>
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="login">
+    </form>
 {% endblock %}
